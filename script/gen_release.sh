@@ -21,7 +21,7 @@ echo "Doc version: ${VERSION}"
 # Tar up the docset
 tar --exclude='.DS_Store' -cvzf docsets/${TAR_NAME} -C ${DOCSET}/.. $(basename ${DOCSET})
 
-FEEDFILE=feeds/master/{FEED_NAME}.xml
+FEEDFILE=feeds/master/${FEED_NAME}.xml
 RELEASE_URL=${GH_URL}/releases/download/${VERSION}/${TAR_NAME}
 
 # Update the feed file
