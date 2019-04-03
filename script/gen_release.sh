@@ -62,10 +62,12 @@ echo "Doc version: ${VERSION}"
 # Tar up the docset
 tar --exclude='.DS_Store' -cvzf docsets/${TAR_NAME} -C ${DOCSET}/.. $(basename ${DOCSET})
 
-FEEDFILE=feeds/${BRANCH}/${FEED_NAME}.xml
+FEED_DIR=feeds/${BRANCH}
+FEEDFILE=${FEED_DIR}/${FEED_NAME}.xml
 RELEASE_URL=${GH_URL}/releases/download/${VERSION}/${TAR_NAME}
 
 # Update the feed file
+mkdir -p ${FEED_DIR}
 cat > ${FEEDFILE} <<EOL
 <entry>
     <name>${FEED_NAME}</name>
