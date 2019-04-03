@@ -2,7 +2,48 @@
 
 # Script to generate KiCad docset releases
 
-DOCSET=$1
+usage='usage: gen_release.sh [options] <branch> <docset>
+     --help                     Print usage plus more detailed help.
+
+     branch                     The release branch
+     docset                     Path to pre-generated docset
+'
+
+help="$usage"'
+Example to generate master release
+    gen_release.sh master ~/path/to/generated/KiCad.docset
+'
+
+die() {
+    echo "$@" 1>&2; exit 1
+}
+
+# Parse command-line arguments.
+help=false
+dryrun=false
+
+while test "$#" != 2; do
+    case "$1" in
+    --help | -h)
+        help=true
+        ;;
+    --dryrun | -n)
+        dryrun=true
+        ;;
+    --) shift ; break ;;
+    -*) die "$usage" ;;
+    *) break ;;
+    esac
+    shift
+done
+
+if [ "$help" = true ]; then
+    echo "${usage}"
+    exit 0
+fi
+
+BRANCH=$1
+DOCSET=$2
 
 FEED_NAME="KiCad"
 
@@ -21,7 +62,7 @@ echo "Doc version: ${VERSION}"
 # Tar up the docset
 tar --exclude='.DS_Store' -cvzf docsets/${TAR_NAME} -C ${DOCSET}/.. $(basename ${DOCSET})
 
-FEEDFILE=feeds/master/${FEED_NAME}.xml
+FEEDFILE=feeds/${BRANCH}/${FEED_NAME}.xml
 RELEASE_URL=${GH_URL}/releases/download/${VERSION}/${TAR_NAME}
 
 # Update the feed file
@@ -65,7 +106,9 @@ function upload_asset {
     UPLOAD_URL="https://uploads.github.com"
     UL_ASSEST_PATH="repos/${GH_OWNER}/${GH_PROJ}/releases/${REL_ID}/assets?name=${FILE}"
 
-    curl -H "${token_cmd}" -H "Content-Type: application/octet-stream" --data-binary @"${FILEPATH}"  ${UPLOAD_URL}/${UL_ASSEST_PATH}
+    if [ "${dryrun}" != true ]; then
+        curl -H "${token_cmd}" -H "Content-Type: application/octet-stream" --data-binary @"${FILEPATH}"  ${UPLOAD_URL}/${UL_ASSEST_PATH}
+    fi
 }
 
 upload_asset ${REL_ID} docsets/${TAR_NAME}
