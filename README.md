@@ -34,5 +34,12 @@ If you need a new release, and none seems forthcoming, open an issue.
 In future, perhaps these can be provided by the KiCad CI services automatically.
 If that happens, there will be a new feed URL to use.
 
-[Zeal]: https://zealdocs.org
+## Build your own
 
+To build your own docset, you do not need this repo, which exists only to
+upload pre-made releases via Github.
+
+You should clone the [main KiCad repo][] and then build the `docset` target.
+
+[Zeal]: https://zealdocs.org
+[main KiCad repo]: https://code.launchpad.net/kicad
