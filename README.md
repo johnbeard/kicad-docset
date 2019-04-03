@@ -10,12 +10,13 @@ version, they are also archive in the releases.
 
 These are the current feeds, which will update as new versions are released:
 
-* Main docs
+* Main development branch docs:
     * `master`: https://raw.githubusercontent.com/johnbeard/kicad-docset/master/feeds/master/KiCad.xml
+* Stable release (5.1) docs:
+    * `master`: https://raw.githubusercontent.com/johnbeard/kicad-docset/master/feeds/5.1/KiCad.xml
 
-You can also download and extract the docset from the TGZ file yourself.
-
-Under the Github releases, you do not need to bother with the tarballs of this
+You can also download and extract the docset from the TGZ file in each release yourself.
+There are under the Github releases, you do not need to bother with the tarballs of this
 repo's code.
 
 ## Icons
