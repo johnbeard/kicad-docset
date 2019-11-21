@@ -50,5 +50,27 @@ upload pre-made releases via Github.
 
 You should clone the [main KiCad repo][] and then build the `docset` target.
 
+## Build with this repo
+
+If you're using this repo, or a clone of it, there is a script to automate
+the packaging and deployment of the docset as Github releases:
+
+```
+cd this_repo
+
+# generate the release
+scripts/gen_release <branch> <path to pre-built kicad docset>
+
+# push the updated feed XMLs to this repo for pick-up by Zeal as an update
+git push
+```
+
+This should:
+
+* Archive the docset to the format expected by Zeal
+* Upload the archive as a Github release
+* Tag this repo
+* Update the feed XMLs (which if what Zeal uses to check for updates)
+
 [Zeal]: https://zealdocs.org
 [main KiCad repo]: https://code.launchpad.net/kicad

@@ -43,6 +43,9 @@ if [ "$help" = true ]; then
     exit 0
 fi
 
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd ${SCRIPT_DIR}/..
+
 BRANCH=$1
 DOCSET=$2
 
