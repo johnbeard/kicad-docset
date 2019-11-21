@@ -12,4 +12,4 @@ jobs:
     - name: Run a one-line script
       run: echo Hello, world! changed.
     - name: Docker step
-      uses: .github/actions/docker.yml # Uses an action in the root directory
+      uses: .github/actions
