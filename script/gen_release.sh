@@ -5,6 +5,7 @@
 usage='usage: gen_release.sh [options] <branch> <docset>
      --help                     Print usage plus more detailed help.
 
+     -n --dryrun                Do not perform the upload
      branch                     The release branch
      docset                     Path to pre-generated docset
 '
