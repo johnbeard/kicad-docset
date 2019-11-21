@@ -77,6 +77,9 @@ cat > ${FEEDFILE} <<EOL
 </entry>
 EOL
 
+git add ${FEEDFILE}
+git commit -m "Updating feed: ${BRANCH} -> ${VERSION}"
+
 APIURL="https://api.github.com"
 token_cmd="Authorization: token ${TOKEN}"
 rel_path="repos/${GH_OWNER}/${GH_PROJ}/releases"
