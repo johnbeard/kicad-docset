@@ -5,7 +5,7 @@ FROM alpine:3.10
 # `/` of the container
 COPY ./entrypoint.sh /entrypoint.sh
 
-# RUN apk update && apk add git doxygen && rm -rf /var/cache/apk/*
+RUN apk update && apk add git doxygen && rm -rf /var/cache/apk/*
 
 # Code file to execute when the docker container starts up
 ENTRYPOINT ["/entrypoint.sh"]
