@@ -64,6 +64,7 @@ TAR_NAME=${FEED_NAME}.tgz
 
 echo "Doc version: ${VERSION}"
 # Tar up the docset
+mkdir -p docsets
 tar --exclude='.DS_Store' -cvzf docsets/${TAR_NAME} -C ${DOCSET}/.. $(basename ${DOCSET})
 
 FEED_DIR=feeds/${BRANCH}
