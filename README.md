@@ -11,7 +11,7 @@ version, they are also archive in the releases.
 These are the current feeds, which will update as new versions are released:
 
 * Main development branch docs:
-    * `master`: https://raw.githubusercontent.com/johnbeard/kicad-docset/master/feeds/master/KiCad.xml
+    * `master`: https://github.com/johnbeard/kicad-docset/releases/download/master/KiCad.xml
 * Stable release (5.1) docs:
     * `master`: https://raw.githubusercontent.com/johnbeard/kicad-docset/master/feeds/5.1/KiCad.xml
 
@@ -43,7 +43,7 @@ the packaging and deployment of the docset as Github releases:
 cd this_repo
 
 # generate the release
-scripts/gen_release <branch> <path to pre-built kicad docset>
+scripts/gen_release.py <branch> <path to pre-built kicad docset>
 
 # push the updated feed XMLs to this repo for pick-up by Zeal as an update
 git push
