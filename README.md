@@ -19,22 +19,6 @@ You can also download and extract the docset from the TGZ file in each release y
 There are under the Github releases, you do not need to bother with the tarballs of this
 repo's code.
 
-## Icons
-
-For some reason, the icon in the TGZ is not found by Zeal. You can
-use this one: ![KiCad
-logo](https://github.com/johnbeard/kicad-docset/raw/master/icons/icon.png)
-(which is the KiCad website's
-[favicon](http://kicad-pcb.org/favicon-16x16.png)).
-
-Save it as `icon.png` in the unpacked docset (e.g. `~/.local/share/Zeal/Zeal/docsets/KiCad.docset`).
-
-Or, use the following command (but don't get too used to running commands you find on the Internet, they can be [evil](https://thejh.net/misc/website-terminal-copy-paste)).
-
-```
-curl -o ~/.local/share/Zeal/Zeal/docsets/KiCad.docset/icon.png https://github.com/johnbeard/kicad-docset/raw/master/icons/icon.png
-```
-
 ## Updates
 
 These docsets are not updated automatically when KiCad changes.
