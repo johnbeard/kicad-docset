@@ -49,6 +49,9 @@ scripts/gen_release <branch> <path to pre-built kicad docset>
 git push
 ```
 
+The path to the pre-built docset is probably something like
+`<build_dir>/doxygen/docset/doxygen/html/KiCad.docset`
+
 This should:
 
 * Archive the docset to the format expected by Zeal
